@@ -7,11 +7,11 @@ import os
 import csv
 import datetime
 
-os.environ['AWS_ACCESS_KEY_ID'] = 'ASIAIIYKSXTDHG3IWATQ'
-os.environ['AWS_SECRET_ACCESS_KEY'] = 'HhGxfYp/6hsfrPS4aX20zFGof9dbYBuK5yi62enE'
-os.environ['AWS_SESSION_TOKEN'] = 'FQoDYXdzEBYaDOgD46RdUgg+OGJBxSK4AnrwWE6Yrmn+fsbHT493NXEwELCu1W5ziagCuokjEqrUrBK4hi7AXQvRs8hiX6W67nSyHcBsp8jR/czHNT0Ui1nQIChEgNZj8lCXKTmv1b3jW75dbj6v056uawqTzCunPCPN5F+7XAR0qe4CEmrc12tu1/jo6NMni6oIZQgRXzsj+TT7ix3h6RvF3SO8Fl13YlofkZ4zAlzra7dZdZaNEMJsNszVjo1p5RfbdZLLN4Eru4GOnTGpI9LWefvXmWsLGPdFFOYc4YX3GYWD4agTlPvgbsgm77h95Y96nooQJS14+LBOar3RSmxszh3LVp0+owfG2/ws+Mv7nDJuqklbmSniVb2I0imvxSKatfkAuJ0DQb7IHDPAF99XNGG1iP2t4a66u1a1Pd9wrv3AbZQ/jX5uPGyc5vpCUSjW8L28BQ=='
-os.environ['https_proxy'] = 'http://proxye1.finra.org:8080'
-os.environ['http_proxy'] = 'http://proxye1.finra.org:8080'
+os.environ['AWS_ACCESS_KEY_ID'] = 'xxxx'
+os.environ['AWS_SECRET_ACCESS_KEY'] = 'xxxx'
+os.environ['AWS_SESSION_TOKEN'] = 'xxxx'
+os.environ['https_proxy'] = 'https://xxxxxx:8080'
+os.environ['http_proxy'] = 'http://xxxxxx:8080'
 
 regs = ['us-east-1','us-west-2']
 
