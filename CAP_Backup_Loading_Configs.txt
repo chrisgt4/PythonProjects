@@ -1,0 +1,17 @@
+[Data Load Configs]
+nbFailedJobsTblName = CAP_Backups_Failed_Jobs
+nbSuccessfulJobsTblName = CAP_Backups_Successful_Jobs
+strFailedDropLoc = C:\FTP Content\CAP Backups\Failed Jobs\
+strSuccessDropLoc = C:\FTP Content\CAP Backups\Successful Jobs\
+strMoveLoc = C:\FTP Content\CAP Backups\Loaded Files\
+dataTruncLimit = 40000
+iaDbUID = xxx
+iaDbPwd = xxx
+emailPickupLoc = D:\Python27\Projects\CAP Backups\email.txt
+emailDropLoc = C:\inetpub\mailroot\Pickup\email.txt
+writeUser= xxx
+iaDbServer = xxx
+iaDbName = xxx
+strFrom = xxx
+strTo = xxx
+strSubject = CAP Backup System Message

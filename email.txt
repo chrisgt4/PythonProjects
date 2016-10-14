@@ -1,0 +1,6 @@
+From: xxxx
+To: xxx
+Subject: CAP Backup System Message
+
+CAP Backup Data Loading Success.
+C:\FTP Content\CAP Backups\Successful Jobs\OpsCenter_CAAT_Successful_Jobs_CJC_03_02_2015_12_00_AM.CSV successfully loaded 14460 lines of data.
