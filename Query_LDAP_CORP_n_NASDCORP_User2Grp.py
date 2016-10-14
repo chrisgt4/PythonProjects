@@ -14,10 +14,10 @@ from optparse import OptionParser
 
 #Constant variable definitions
 LDAP24API = StrictVersion(ldap.__version__) >= StrictVersion('2.4')
-domains = ['NASDCORP','NASDROOT','CORP']
+domains = ['xxx','xx','xxx']
 
 try:
-    cnn = pypyodbc.connect(r"TRUSTED_CONNECTION=Yes;DRIVER={SQL Server};SERVER=ny4wnp01-sql1;DATABASE=IA_DB;")
+    cnn = pypyodbc.connect(r"TRUSTED_CONNECTION=Yes;DRIVER={SQL Server};SERVER=xxxx;DATABASE=xxx;")
     cursor = cnn.cursor()
 
     #cursor.execute("DELETE FROM dbo.AD_Users;")
@@ -93,12 +93,12 @@ def clean_List(list, key):
         return None
 
 for d in domains:
-    if d == 'NASDCORP':
-        baseDN = "DC=corp,DC=root,DC=nasd,DC=com"
-    elif d == 'CORP':
-        baseDN = "DC=corp,DC=finra,DC=org"
-    elif d == 'NASDROOT':
-        baseDN = "DC=root,DC=nasd,DC=com"
+    if d == 'xxx':
+        baseDN = "DC=xx,DC=xx,DC=xx,DC=xx"
+    elif d == 'xxx':
+        baseDN = "DC=xx,DC=xx,DC=xxx"
+    elif d == 'xxx':
+        baseDN = "DC=xxx,DC=xxx,DC=xxx"
     searchScope = ldap.SCOPE_SUBTREE
     retrieveAttributes = None
     searchFilter = "(&(objectclass=user)(!(objectclass=computer)))"
@@ -107,22 +107,22 @@ for d in domains:
       
     try:
         ldap.set_option(ldap.OPT_REFERRALS, 0)
-        if d == 'NASDCORP':
-            l = ldap.initialize("ldap://ny4wncpdcp003.corp.root.nasd.com:389/")
-        elif d == 'CORP':
-            l = ldap.initialize("ldap://ny4-corp-dcp1.corp.finra.org:389/")
-        elif d == 'NASDROOT':
-            l = ldap.initialize("ldap://rkv-cp-dcp1.root.nasd.com:389/")
+        if d == 'xxx':
+            l = ldap.initialize("ldap://xxx:389/")
+        elif d == 'xxx':
+            l = ldap.initialize("ldap://xxx:389/")
+        elif d == 'xxx':
+            l = ldap.initialize("ldap://xxx:389/")
         l.protocol_version = ldap.VERSION3
-        if d == 'NASDCORP':
-            username = "CN=Christopher Curtis,OU=Users,OU=Locations,DC=corp,DC=root,DC=nasd,DC=com"
-            password = 'Ch0c0&J0c3lyn'
-        elif d == 'CORP':
-            username = "CN=Christopher Curtis (IA),OU=Privileged_User_Accounts,OU=Operations,DC=corp,DC=finra,DC=org"
-            password = 'Go#9terps'
-        elif d == 'NASDROOT':
-            username = "CN=Christopher Curtis,OU=Users,OU=Locations,DC=corp,DC=root,DC=nasd,DC=com"
-            password = 'Ch0c0&J0c3lyn'
+        if d == 'xxx':
+            username = "CN=xxx,OU=Users,OU=xxx,DC=xxx,DC=xxx,DC=xxx,DC=xxx"
+            password = 'xxx'
+        elif d == 'xxx':
+            username = "CN=xxx,OU=xxx,OU=xxx,DC=xx,DC=xx,DC=xx"
+            password = 'xxx'
+        elif d == 'xxx':
+            username = "CN=xxx,OU=xxx,OU=xxx,DC=xxx,DC=xxx,DC=xxx,DC=xxx"
+            password = 'xx'
         #line below is to use TLS connection for LDAP, which is currently not enabled or allowed
         #l.start_tls_s()
         l.simple_bind_s(username, password)
