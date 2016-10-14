@@ -1,0 +1,18 @@
+[Data Load Configs]
+loadTblName = CAP_IP_Mapping_Win
+strDropLoc = D:\CAP Ip Address Mapping\Data Drop Loc
+emailPickupLoc = D:\CAP IP Address Mapping\email.txt
+emailDropLoc = C:\inetpub\mailroot\Pickup\email.txt
+writeUser= xxxx
+iaDbServer = xxxx
+iaDbName = xxx
+strFrom = xxxx
+strTo = xxxxx
+strSubject = CAP IP Mapping System Message
+[Access Keys]
+iaDbUID = xxx
+iaDbPwd = xxx
+uidKey = xxx
+uidIv = xxxx
+pwdKey = xxx
+pwdIv = xxxx
