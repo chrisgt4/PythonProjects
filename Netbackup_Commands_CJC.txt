@@ -1,0 +1,30 @@
+**Command to pull all SLP policy information from netbackup in LINUX**
+sudo /usr/openv/netbackup/bin/admincmd/nbstl -L >> ~curtisc2/slp_policies.txt
+
+**Command to pull specific slp policy information from netbackup in LINUX**
+sudo /usr/openv/netbackup/bin/admincmd/nbstl <nameofslp> -L >> <nameoffile>.txt
+
+**Command to pull all policy information from netbackup in LINUX**
+sudo /usr/openv/netbackup/bin/admincmd/bppllist -allpolicies -U >> ~curtisc2/allpolicies3.txt
+
+**Command to pull specific policy information from netbackup in LINUX**
+sudo /usr/openv/netbackup/bin/admincmd/bppllist <policy name> -U >> <nameoffile>.txt
+
+**Command to pull all policy information from netbackup in Windows nj server**
+D:\Veritas_NetBackup\NetBackup\bin\admincmd\bppllist -allpolicies -U >> C:\Users\curtisc\Documents\allnjmpprnbpolicies.txt
+
+**Command to pull all policy information from netbackup in Windows ash server**
+cd C:\Program Files\Veritas\NetBackup\bin\admincmd
+bppllist -allpolicies -U >> C:\Users\CurtisC\Documents\allashmpprnbpolicies.txt
+
+**Command to check whether backups are configured for a specific client in LINUX**
+sudo /usr/openv/netbackup/bin/admincmd/bpimagelist -client <insert client name> -d 1/1/2015 -U
+
+**NB Console**
+/usr/openv/java/jnbSA&
+
+**This is a command to pull all tapes that are not in the library (e.g. a quantum tape library in a slot)
+sudo /usr/openv/volmgr/bin/vmquery -a  -bx | awk ' $3 == "NONE" { print } ' >> ~curtisc2/allmedianotinlibrary.txt
+
+**This is a command to pull all tapes that have been processed by the NBU vault
+sudo /usr/openv/volmgr/bin/vmquery -a -bx  | awk   '$7 ~ /off/ { print } ' >> ~curtisc2/allmediainvault.txt
