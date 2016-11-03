@@ -1,0 +1,41 @@
+USE master
+SELECT dp1.name AS user_name		
+	, dp1.type_desc	
+	, CASE WHEN dp2.name IS NULL AND dperm.permission_name IS NULL	
+		THEN 'Orphaned Entry - No Access'
+		ELSE CASE WHEN dp2.name IS NULL THEN 'Privilege Directly Assigned' ELSE dp2.Name END
+	END AS role_name	
+	, dperm.class_desc	
+	, dperm.permission_name	
+	, dperm.state_desc	
+	, o.name AS obj_name	
+FROM sys.database_principals AS dp1		
+LEFT OUTER JOIN sys.database_role_members AS drm ON dp1.principal_id = drm.member_principal_id		
+LEFT OUTER JOIN sys.database_principals AS dp2 ON dp2.principal_id = drm.role_principal_id		
+LEFT OUTER JOIN sys.database_permissions AS dperm ON dperm.grantee_principal_id = dp1.principal_id		
+LEFT OUTER JOIN sys.all_objects AS o ON o.object_id = dperm.major_id		
+WHERE dp1.is_fixed_role = 0
+
+--Option 1 to get all user to database mappings
+USE master
+exec sp_MSloginmappings
+
+--Option 2 to get all user to database mappings
+CREATE TABLE #tempusers (
+    LoginName nvarchar(max),
+    DBname nvarchar(max),
+    Username nvarchar(max), 
+    AliasName nvarchar(max)
+)
+
+INSERT INTO #tempusers 
+EXEC master..sp_msloginmappings 
+
+-- display results
+SELECT * 
+FROM   #tempusers 
+ORDER BY dbname, username
+
+-- cleanup
+DROP TABLE #tempusers
+
