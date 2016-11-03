@@ -1,0 +1,13 @@
+SELECT sp1.name AS user_name
+	, sp1.type_desc
+	, CASE WHEN sp2.name IS NULL AND sperm.permission_name IS NULL
+		THEN 'Orphaned Entry - No Access'
+		ELSE CASE WHEN sp2.name IS NULL THEN 'Privilege Directly Assigned' ELSE sp2.Name END
+	END AS role_name
+	, sperm.class_desc
+	, sperm.permission_name
+	, sperm.state_desc
+FROM sys.server_principals AS sp1
+LEFT OUTER JOIN sys.server_role_members AS srm ON sp1.principal_id = srm.member_principal_id
+LEFT OUTER JOIN sys.server_principals AS sp2 ON sp2.principal_id = srm.role_principal_id
+LEFT OUTER JOIN sys.server_permissions AS sperm ON sperm.grantee_principal_id = sp1.principal_id
