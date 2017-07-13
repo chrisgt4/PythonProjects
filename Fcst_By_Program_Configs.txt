@@ -1,0 +1,15 @@
+[User Defined Vars]
+#Used to define the name of the sqlite database created
+strDbName = X:\Python\Project Reporting\Fcst vs Actuals Bus IT Split\Fcst_Data_Temp.sqlite
+
+#Used to define the full file path for the pickup location for the Hyperion Smartview Data Input file
+svflPath = X:\Hyperion\SV\SV for Fcst by Program_Bus IT Split.xlsx
+
+#Used to define the full file path for the pickup location for the PeopleSoft PCS QRY18 output file
+qry18flPath = X:\Python\Project Reporting\Forecast by Program Bus IT Split\FMPAQRY0018-5502906.xlsx
+
+#Used to define the full file path where to write the Excel based output report to
+userRptNm = X:\Python\Project Reporting\Forecast by Program Bus IT Split\3Q 18 Proj_Forecast_Bus_IT_Split_071317.xlsx
+
+#Used to define the reporting year
+userYear = 2018
